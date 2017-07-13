@@ -34,7 +34,8 @@ namespace UserSignup.Controllers
                 return View();
             }
 
-            return Redirect("/");
+            ViewBag.user = user;
+            return View("Index");
         }
     }
 }
