@@ -15,5 +15,12 @@ namespace UserSignup.Controllers
         {
             return View();
         }
+
+        public IActionResult Add()
+        {
+            ViewBag.title = "Add User";
+            return View();
+
+        }
     }
 }
