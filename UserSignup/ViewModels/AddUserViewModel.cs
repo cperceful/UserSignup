@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using UserSignup.Models;
 
 namespace UserSignup.ViewModels
 {
@@ -24,6 +25,20 @@ namespace UserSignup.ViewModels
 
         [EmailAddress]
         public string Email { get; set; }
+
+
+        public void AddUser()
+        {
+            User user = new User {
+                Username = Username,
+                Password = Password,
+                Email = Email
+            };
+            UserData.Add(user);
+        }
+
+        public AddUserViewModel() { }
+
 
 
     }

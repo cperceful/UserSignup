@@ -1,16 +1,19 @@
-﻿<h1>User Detail</h1>
+﻿@using UserSignup.Models
+@model User
+
+<h1>User Detail</h1>
 
 <div>
-    <label for="username">Username</label>
-    <p name="username">@ViewBag.user.Username</p>
+    <label asp-for="Username"></label>
+    <p class="text-info">@Model.Username</p>
 </div>
 
 <div>
-    <label for="email">Email</label>
-    <p name="email">@ViewBag.user.Email</p>
+    <label asp-for="Email"></label>
+    <p class="text-info">@Model.Email</p>
 </div>
 
 <div>
-    <label for="dateJoined">Date Joined</label>
-    <p name="dateJoined">@ViewBag.user.DateJoined</p>
+    <label asp-for="DateJoined"></label>
+    <p class="text-info">@Model.DateJoined</p>
 </div>

@@ -1,26 +1,32 @@
-﻿<h1>@ViewBag.title</h1>
+﻿@using UserSignup.ViewModels
+@model AddUserViewModel
+
+<h1>Add User</h1>
 
 <form method="post">
     
     <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" name="username" class="form-control" required/>
+        <label asp-for="Username"></label>
+        <input asp-for="Username" class="form-control" />
+        <span asp-validation-for="Username"></span>
     </div>
 
     <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" name="password" class="form-control" required/>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control"/>
+        <span asp-validation-for="Password"></span>
     </div>
 
     <div class="form-group">
-        <label for="verify">Verify Password</label>
-        <input type="password" name="verify" class="form-control" required/>
-        <p class="text-danger">@ViewBag.error</p>
+        <label asp-for="Verify"></label>
+        <input asp-for="Verify" class="form-control" />
+        <span asp-validation-for="Verify"></span>
     </div>
 
     <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" name="email" class="form-control" required/>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email"></span>
     </div>
 
     <div>
