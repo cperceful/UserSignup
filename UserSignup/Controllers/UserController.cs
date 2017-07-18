@@ -14,7 +14,8 @@ namespace UserSignup.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            List<User> users = UserData.GetAll();
+            return View(users);
         }
 
         [HttpGet]
@@ -34,8 +35,16 @@ namespace UserSignup.Controllers
                 return View();
             }
 
-            ViewBag.user = user;
-            return View("Index");
+            UserData.Add(user);
+            return Redirect("/");
+        }
+
+        [HttpGet]
+        [Route("/user/detail/{userId}")]
+        public IActionResult Detail(int userId)
+        {
+            ViewBag.user = UserData.FindById(userId);
+            return View();
         }
     }
 }

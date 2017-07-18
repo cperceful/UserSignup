@@ -5,26 +5,26 @@ using System.Threading.Tasks;
 
 namespace UserSignup.Models
 {
-    public class UserData
+    public static class UserData
     {
 
         //List
         private static List<User> users = new List<User>();
 
         //Add
-        public void Add(User user)
+        public static void Add(User user)
         {
             users.Add(user);
         }
         
         //GetAll
-        public List<User> GetAll()
+        public static List<User> GetAll()
         {
             return users;
         }
 
         //FindById
-        public User FindById(int userId)
+        public static User FindById(int userId)
         {
             return users.Single(x => x.UserId == userId);
         }

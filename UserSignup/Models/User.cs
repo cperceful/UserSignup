@@ -18,11 +18,13 @@ namespace UserSignup.Models
 
         public int UserId { get; } 
 
+        public DateTime DateJoined { get; }
+
         public User()
         {
             UserId = nextId;
             nextId++;
-
+            DateJoined = DateTime.Now;
         }
 
         public User(string username, string password) : base()
